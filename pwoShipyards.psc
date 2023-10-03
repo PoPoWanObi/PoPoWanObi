@@ -120,7 +120,7 @@ Function UpdateVendors()
 	Utility.Wait(5.0)
 
 	; Inform the player that the script has begun
-	Debug.Notification("The ESA script has started processing...")
+	Debug.Notification("The ESSA script has started processing...")
 
 	; Get the ActorTypeHuman keyword to determine if the reference is a actor
 	Keyword isHuman = Game.GetForm(0x0025E194) as Keyword
@@ -402,7 +402,7 @@ Function UpdateVendors()
 	;Wait 2 seconds to delay the notification slightly
 	Utility.Wait(2)
 
-	Debug.Notification("The ESA script has finished running!")
+	Debug.Notification("The ESSA script has finished running!")
 
 EndFunction
 
