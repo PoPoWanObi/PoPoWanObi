@@ -170,9 +170,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianAtlantisActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: New Atlantis Technician (" + technicianAtlantis + ") found.", 0)
+    	Debug.Trace("PWO: New Atlantis Technician (0x" + Utility.IntToHex(technicianAtlantis) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: New Atlantis Technician (" + technicianAtlantis + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: New Atlantis Technician (0x" + Utility.IntToHex(technicianAtlantis) + ") not found or not an actor.", 0)
 	endif
 
 	; --- AKILA TECHNICIAN ---
@@ -186,9 +186,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianAkilaActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Akila Technician (" + technicianAkila + ") found.", 0)
+    	Debug.Trace("PWO: Akila Technician (0x" + Utility.IntToHex(technicianAkila) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Akila Technician (" + technicianAkila + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Akila Technician (0x" + Utility.IntToHex(technicianAkila) + ") not found or not an actor.", 0)
 	endif
 
 	; --- NEON TECHNICIAN ---
@@ -202,9 +202,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianNeonActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Neon Technician (" + technicianNeon + ") found.", 0)
+    	Debug.Trace("PWO: Neon Technician (0x" + Utility.IntToHex(technicianNeon) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Neon Technician (" + technicianNeon + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Neon Technician (0x" + Utility.IntToHex(technicianNeon) + ") not found or not an actor.", 0)
 	endif
 
 	; --- PARADISO TECHNICIAN ---
@@ -218,9 +218,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianParadisoActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Paradiso Technician (" + technicianParadiso + ") found.", 0)
+    	Debug.Trace("PWO: Paradiso Technician (0x" + Utility.IntToHex(technicianParadiso) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Paradiso Technician (" + technicianParadiso + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Paradiso Technician (0x" + Utility.IntToHex(technicianParadiso) + ") not found or not an actor.", 0)
 	endif
 
 	; --- CYDONIA TECHNICIAN ---
@@ -234,9 +234,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianCydoniaActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Cydonia Technician (" + technicianCydonia + ") found.", 0)
+    	Debug.Trace("PWO: Cydonia Technician (0x" + Utility.IntToHex(technicianCydonia) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Cydonia Technician (" + technicianCydonia + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Cydonia Technician (0x" + Utility.IntToHex(technicianCydonia) + ") not found or not an actor.", 0)
 	endif
 
 	; --- HOPETOWN TECHNICIAN ---
@@ -250,9 +250,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianHopeTownActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Hopetown Technician (" + technicianHopeTown + ") found.", 0)
+    	Debug.Trace("PWO: Hopetown Technician (0x" + Utility.IntToHex(technicianHopeTown) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Hopetown Technician (" + technicianHopeTown + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Hopetown Technician (0x" + Utility.IntToHex(technicianHopeTown) + ") not found or not an actor.", 0)
 	endif
 
 	; --- ELEOS TECHNICIAN ---
@@ -266,9 +266,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianEleosActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Eleos Technician (" + technicianEleos + ") found.", 0)
+    	Debug.Trace("PWO: Eleos Technician (0x" + Utility.IntToHex(technicianEleos) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Eleos Technician (" + technicianEleos + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Eleos Technician (0x" + Utility.IntToHex(technicianEleos) + ") not found or not an actor.", 0)
 	endif
 
 	; --- GARGARIN TECHNICIAN ---
@@ -282,9 +282,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianGargarinActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Gargarin Technician (" + technicianGargarin + ") found.", 0)
+    	Debug.Trace("PWO: Gargarin Technician (0x" + Utility.IntToHex(technicianGargarin) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Gargarin Technician (" + technicianGargarin + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Gargarin Technician (0x" + Utility.IntToHex(technicianGargarin) + ") not found or not an actor.", 0)
 	endif
 
 	; --- THE DEN TECHNICIAN ---
@@ -298,9 +298,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianTheDenActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: The Den Technician (" + technicianTheDen + ") found.", 0)
+    	Debug.Trace("PWO: The Den Technician (0x" + Utility.IntToHex(technicianTheDen) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: The Den Technician (" + technicianTheDen + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: The Den Technician (0x" + Utility.IntToHex(technicianTheDen) + ") not found or not an actor.", 0)
 	endif
 
 	; --- HOMESTEAD TECHNICIAN ---
@@ -314,9 +314,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianHomesteadActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Homestead Technician (" + technicianHomestead + ") found.", 0)
+    	Debug.Trace("PWO: Homestead Technician (0x" + Utility.IntToHex(technicianHomestead) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Homestead Technician (" + technicianHomestead + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Homestead Technician (0x" + Utility.IntToHex(technicianHomestead) + ") not found or not an actor.", 0)
 	endif
 
 	; --- TAIYO TECHNICIAN ---
@@ -330,9 +330,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianTaiyoActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Taiyo Technician (" + technicianTaiyo + ") found.", 0)
+    	Debug.Trace("PWO: Taiyo Technician (0x" + Utility.IntToHex(technicianTaiyo) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Taiyo Technician (" + technicianTaiyo + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Taiyo Technician (0x" + Utility.IntToHex(technicianTaiyo) + ") not found or not an actor.", 0)
 	endif
 
 	; --- DEIMOS TECHNICIAN ---
@@ -346,9 +346,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianDeimosActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Deimos Technician (" + technicianDeimos + ") found.", 0)
+    	Debug.Trace("PWO: Deimos Technician (0x" + Utility.IntToHex(technicianDeimos) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Deimos Technician (" + technicianDeimos + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Deimos Technician (0x" + Utility.IntToHex(technicianDeimos) + ") not found or not an actor.", 0)
 	endif
 
 	; --- STROUD TECHNICIAN ---
@@ -362,9 +362,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianStroudActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Stroud Technician (" + technicianStroud + ") found.", 0)
+    	Debug.Trace("PWO: Stroud Technician (0x" + Utility.IntToHex(technicianStroud) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Stroud Technician (" + technicianStroud + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Stroud Technician (0x" + Utility.IntToHex(technicianStroud) + ") not found or not an actor.", 0)
 	endif
 
 	; --- RED MILE TECHNICIAN ---
@@ -378,9 +378,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianRedMileActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: Red Mile Technician (" + technicianRedMile + ") found.", 0)
+    	Debug.Trace("PWO: Red Mile Technician (0x" + Utility.IntToHex(technicianRedMile) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: Red Mile Technician (" + technicianRedMile + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: Red Mile Technician (0x" + Utility.IntToHex(technicianRedMile) + ") not found or not an actor.", 0)
 	endif
 
 	; --- THE KEY TECHNICIAN ---
@@ -394,9 +394,9 @@ Function UpdateVendors()
     	AddKeywordsToActor(technicianTheKeyActor)
 
     	; You now have a reference to the Actor associated with the PRID
-    	Debug.Trace("PWO: The Key Technician (" + technicianTheKey + ") found.", 0)
+    	Debug.Trace("PWO: The Key Technician (0x" + Utility.IntToHex(technicianTheKey) + ") found.", 0)
 	else
-    	Debug.Trace("PWO: The Key Technician (" + technicianTheKey + ") not found or not an actor.", 0)
+    	Debug.Trace("PWO: The Key Technician (0x" + Utility.IntToHex(technicianTheKey) + ") not found or not an actor.", 0)
 	endif
 
 	;Wait 2 seconds to delay the notification slightly
