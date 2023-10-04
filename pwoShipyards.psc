@@ -479,7 +479,6 @@ Function AddKeywordsToActor(Actor actor)
 	Keyword VendorSM_Nova_Habitat_Struct_Common = Game.GetForm(0x1453b8) as Keyword
 	Keyword VendorSM_Nova_Bridge_Common = Game.GetForm(0x1453b9) as Keyword
 	Keyword VendorSM_Nova_Lander_Common = Game.GetForm(0x1453ba) as Keyword
-	Keyword VendorSM_Hopetech_Cargo_DELETEME = Game.GetForm(0x1453bb) as Keyword ; Deleted reference?
 	Keyword VendorSM_Hopetech_Lander_Common = Game.GetForm(0x1453bc) as Keyword
 	Keyword VendorSM_Hopetech_Habitat_Struct_Common = Game.GetForm(0x1453bd) as Keyword
 	Keyword VendorSM_Hopetech_Bridge_Common = Game.GetForm(0x1453be) as Keyword
@@ -492,6 +491,15 @@ Function AddKeywordsToActor(Actor actor)
 	Keyword VendorSM_Deimos_Habitat_Struct_Common = Game.GetForm(0x1453c5) as Keyword
 	Keyword VendorSM_Deimos_Bridge_Common = Game.GetForm(0x1453c6) as Keyword
 	Keyword VendorSM_Deimos_Lander_Common = Game.GetForm(0x1453c7) as Keyword
+
+	; DEBUG KEYWORDS
+	;Keyword VendorSM_Starstation = Game.GetForm(0x1d2072) as Keyword ; Starstation parts
+	;Keyword VendorSM_Hopetech_Cargo_DELETEME = Game.GetForm(0x1453bb) as Keyword ; Hopetech Cargo
+	;Keyword VendorSM_BasicParts_Shinigami_Weapon_Special_DELETEME = Game.GetForm(0x14538e) as Keyword
+	;Keyword VendorSM_BasicParts_Nautilus_Cargo_DELETEME = Game.GetForm(0x1453ac) as Keyword
+	;Keyword VendorSM_BasicParts_LightScythe_Weapon_Special_DELETEME = Game.GetForm(0x145392) as Keyword
+	;Keyword VendorSM_BasicParts_Horizon_Weapon_Special_DELETEME = Game.GetForm(0x145396) as Keyword
+	;Keyword VendorSM_BasicParts_Ballistic_Weapon_Special_DELETEME = Game.GetForm(0x14539a) as Keyword
 
 	; Add keywords to the actor if they do not have them already
 	If !actor.HasKeyword(VendorSM_Nova_Habitat_Struct_Exclusive)
