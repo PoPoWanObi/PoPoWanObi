@@ -433,12 +433,10 @@ Function AddKeywordsToActor(Actor actor)
 	Keyword VendorSM_Nova_Bridge_Exclusive = Game.GetForm(0x271d4) as Keyword
 	Keyword VendorSM_Stroud_Bridge_Exclusive = Game.GetForm(0x271d5) as Keyword
 	Keyword VendorSM_Taiyo_Bridge_Exclusive = Game.GetForm(0x271d6) as Keyword
-	Keyword VendorSM_CrimsonFleet_BlackMarket = Game.GetForm(0x10c4ab) as Keyword
 	Keyword VendorSM_Trident_Bridge = Game.GetForm(0x143C9C) as Keyword
 	Keyword VendorSM_Trident_Habitat_Struct_Common = Game.GetForm(0x143c9d) as Keyword
 	Keyword VendorSM_BasicParts_Protectorate_Cargo = Game.GetForm(0x143c9e) as Keyword
 	Keyword VendorSM_BasicParts_Protectorate_Shields = Game.GetForm(0x143c9f) as Keyword
-	Keyword VendorSM_ShieldedCargo = Game.GetForm(0x143CA0) as Keyword
 	Keyword VendorSM_BasicParts_Shinigami_Weapon_Ballistic = Game.GetForm(0x14538F) as Keyword
 	Keyword VendorSM_BasicParts_Shinigami_Weapon_Missile = Game.GetForm(0x145390) as Keyword
 	Keyword VendorSM_BasicParts_Shinigami_Weapon_EM = Game.GetForm(0x145391) as Keyword
@@ -491,6 +489,10 @@ Function AddKeywordsToActor(Actor actor)
 	Keyword VendorSM_Deimos_Habitat_Struct_Common = Game.GetForm(0x1453c5) as Keyword
 	Keyword VendorSM_Deimos_Bridge_Common = Game.GetForm(0x1453c6) as Keyword
 	Keyword VendorSM_Deimos_Lander_Common = Game.GetForm(0x1453c7) as Keyword
+
+	// Quest-Related
+	Keyword VendorSM_CrimsonFleet_BlackMarket = Game.GetForm(0x10c4ab) as Keyword
+	Keyword VendorSM_ShieldedCargo = Game.GetForm(0x143CA0) as Keyword
 
 	; DEBUG KEYWORDS
 	;Keyword VendorSM_Starstation = Game.GetForm(0x1d2072) as Keyword ; Starstation parts
@@ -602,9 +604,9 @@ Function AddKeywordsToActor(Actor actor)
     	actor.AddKeyword(VendorSM_Taiyo_Bridge_Exclusive)
 	EndIf
 
-	If !actor.HasKeyword(VendorSM_CrimsonFleet_BlackMarket)
-    	actor.AddKeyword(VendorSM_CrimsonFleet_BlackMarket)
-	EndIf
+	;If !actor.HasKeyword(VendorSM_CrimsonFleet_BlackMarket)
+    ;	actor.AddKeyword(VendorSM_CrimsonFleet_BlackMarket)
+	;EndIf
 
 	If !actor.HasKeyword(VendorSM_Trident_Bridge)
     	actor.AddKeyword(VendorSM_Trident_Bridge)
@@ -622,9 +624,9 @@ Function AddKeywordsToActor(Actor actor)
     	actor.AddKeyword(VendorSM_BasicParts_Protectorate_Shields)
 	EndIf
 
-	If !actor.HasKeyword(VendorSM_ShieldedCargo)
-    	actor.AddKeyword(VendorSM_ShieldedCargo)
-	EndIf
+	;If !actor.HasKeyword(VendorSM_ShieldedCargo)
+    ;	actor.AddKeyword(VendorSM_ShieldedCargo)
+	;EndIf
 
 	If !actor.HasKeyword(VendorSM_BasicParts_Shinigami_Weapon_Ballistic)
     	actor.AddKeyword(VendorSM_BasicParts_Shinigami_Weapon_Ballistic)
