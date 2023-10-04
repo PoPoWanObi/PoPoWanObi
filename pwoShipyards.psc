@@ -490,7 +490,7 @@ Function AddKeywordsToActor(Actor actor)
 	Keyword VendorSM_Deimos_Bridge_Common = Game.GetForm(0x1453c6) as Keyword
 	Keyword VendorSM_Deimos_Lander_Common = Game.GetForm(0x1453c7) as Keyword
 
-	// Quest-Related
+	; Quest-Related
 	Keyword VendorSM_CrimsonFleet_BlackMarket = Game.GetForm(0x10c4ab) as Keyword
 	Keyword VendorSM_ShieldedCargo = Game.GetForm(0x143CA0) as Keyword
 
@@ -780,9 +780,9 @@ Function AddKeywordsToActor(Actor actor)
 	    actor.AddKeyword(VendorSM_Nova_Lander_Common)
 	EndIf
 
-	If !actor.HasKeyword(VendorSM_Hopetech_Cargo_DELETEME)
-	    actor.AddKeyword(VendorSM_Hopetech_Cargo_DELETEME)
-	EndIf
+	;If !actor.HasKeyword(VendorSM_Hopetech_Cargo_DELETEME)
+	;    actor.AddKeyword(VendorSM_Hopetech_Cargo_DELETEME)
+	;EndIf
 
 	If !actor.HasKeyword(VendorSM_Hopetech_Lander_Common)
 	    actor.AddKeyword(VendorSM_Hopetech_Lander_Common)
