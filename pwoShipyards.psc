@@ -16,7 +16,7 @@ EndEvent
 
 Function GetVersion() global
 	; A quick global function that can be used to determine the version
-	Float version = "1.01"
+	String version = "1.01"
 	Debug.Messagebox("ESSA Version: " + version)
 EndFunction
 
