@@ -11,7 +11,7 @@ ScriptName pwoShipyards extends ReferenceAlias
 
 Event OnInit()
 	; Inform the player that the script has been activated, and warn them to not run it again
-	Debug.Messagebox("Expanded Ship Services Access script has been successfully activated! Please do not run this command again, or you will have multiple scripts attached to your character. This script will run once every time you load your save. Thank you for downloading!")
+	Debug.Messagebox("Expanded Ship Services Access [ESSA] script has been successfully activated! Please do not run this command again, or you will have multiple scripts attached to your character. This script will remain attached to your character even after closing the game or reloading a save. Thank you for downloading!")
 EndEvent
 
 Function GetVersion() global
