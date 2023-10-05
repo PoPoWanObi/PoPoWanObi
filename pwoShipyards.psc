@@ -3,15 +3,20 @@
 ; This script will add all ship components to all known ship technicians to speed up your ship building!
 ; --- Author ---
 ; PoPoWanObi
+; --- Notes ---
+; Make sure we update all version variables when publishing new updates or things will break
+; Current version variables are in GetVersion, OnPlayerLoadGame and OnActorActivatedRef(twice)
 
 ScriptName pwoShipyards extends ReferenceAlias
 
 Event OnInit()
+	; Inform the player that the script has been activated, and warn them to not run it again
 	Debug.Messagebox("Expanded Ship Services Access script has been successfully activated! Please do not run this command again, or you will have multiple scripts attached to your character. This script will run once every time you load your save. Thank you for downloading!")
 EndEvent
 
 Function GetVersion() global
-	String version = "1.01"
+	; A quick global function that can be used to determine the version
+	Float version = "1.01"
 	Debug.Messagebox("ESSA Version: " + version)
 EndFunction
 
@@ -22,17 +27,22 @@ Event OnPlayerLoadGame()
 EndEvent
 
 Event OnActorActivatedRef(ObjectReference akActionRef)
+	Float version = 1.01
 
-	; Basic keyword all shipyard vendors should have
-	Keyword VendorSM_BasicParts_Shinigami_Weapon_Ballistic = Game.GetForm(0x14538F) as Keyword
+	; Since scripts will bake into our saves, we will do version updating to disable old scripts and only run our new ones
+	If version <= 1.01
+		; Basic keyword all shipyard vendors should have
+		Keyword VendorSM_BasicParts_Shinigami_Weapon_Ballistic = Game.GetForm(0x14538F) as Keyword
 
-	; Check if the NPC has the specified keyword
-    If akActionRef.HasKeyword(VendorSM_BasicParts_Shinigami_Weapon_Ballistic)
-        AddKeywordsToObjRef(akActionRef)
-        Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
-    Else
-        Debug.Trace("PWO: {ESSA} - NPC does not have the keyword.", 0)
+		; Check if the NPC has the specified keyword
+    	If akActionRef.HasKeyword(VendorSM_BasicParts_Shinigami_Weapon_Ballistic)
+        	AddKeywordsToObjRef(akActionRef)
+        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
+    	Else
+        	Debug.Trace("PWO: {ESSA} - NPC does not have the keyword.", 0)
+    	EndIf
     EndIf
+	
 EndEvent
 
 ; Function to add keywords to an object reference
