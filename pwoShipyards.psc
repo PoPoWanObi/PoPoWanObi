@@ -51,7 +51,6 @@ Event OnActorActivatedRef(ObjectReference akActionRef)
 		Keyword isHuman = Game.GetForm(0x0025E194) as Keyword
 
 		If outpostOnly == false
-
 			; Check if the NPC has the specified keyword
 	    	If akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Deimos_Docker) || akActionRef.HasKeyword(VendorSM_Hopetech_Docker) || akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Shields))
 	    		AddKeywordsToObjRef(akActionRef)
@@ -69,23 +68,24 @@ Event OnActorActivatedRef(ObjectReference akActionRef)
 	        	Debug.Trace("PWO: {ESSA} - NPC does not have the requested keywords.", 0)
 	    	EndIf
 	    EndIf
+
 	    ; Outposts check
-	    	If !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Deimos_Docker) || akActionRef.HasKeyword(VendorSM_Hopetech_Docker) || akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Shields))
-	    		AddKeywordsToObjRef(akActionRef)
-	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
-	    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Reactor) || akActionRef.HasKeyword(VendorSM_BasicParts_DeepCore_GravDrive) || akActionRef.HasKeyword(VendorSM_BasicParts_AmunDunn_Engine))
-	    		AddKeywordsToObjRef(akActionRef)
-	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
-	    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Nova_GravDrive) || akActionRef.HasKeyword(VendorSM_Hopetech_Lander_Common) || akActionRef.HasKeyword(VendorSM_Taiyo_Lander_Common))
-	    		AddKeywordsToObjRef(akActionRef)
-	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
-	    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Stroud_Habitat_Struct_Common) || akActionRef.HasKeyword(VendorSM_Deimos_Habitat_Struct_Common))
-	    		AddKeywordsToObjRef(akActionRef)
-	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
-	    	ElseIf !akActionRef.hasKeyword(isHuman)
-	        	Debug.Trace("PWO: {ESSA} - Target does not have the requested keywords.", 0)
-    		EndIf
-    	EndIf
+    	If !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Deimos_Docker) || akActionRef.HasKeyword(VendorSM_Hopetech_Docker) || akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Shields))
+    		AddKeywordsToObjRef(akActionRef)
+        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Reactor) || akActionRef.HasKeyword(VendorSM_BasicParts_DeepCore_GravDrive) || akActionRef.HasKeyword(VendorSM_BasicParts_AmunDunn_Engine))
+    		AddKeywordsToObjRef(akActionRef)
+        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Nova_GravDrive) || akActionRef.HasKeyword(VendorSM_Hopetech_Lander_Common) || akActionRef.HasKeyword(VendorSM_Taiyo_Lander_Common))
+    		AddKeywordsToObjRef(akActionRef)
+        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Stroud_Habitat_Struct_Common) || akActionRef.HasKeyword(VendorSM_Deimos_Habitat_Struct_Common))
+    		AddKeywordsToObjRef(akActionRef)
+        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+    	ElseIf !akActionRef.hasKeyword(isHuman)
+        	Debug.Trace("PWO: {ESSA} - Target does not have the requested keywords.", 0)
+		EndIf
+	EndIf
 EndEvent
 
 ; Function to add keywords to an object reference
