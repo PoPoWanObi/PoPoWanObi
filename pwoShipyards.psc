@@ -28,7 +28,7 @@ EndEvent
 
 Event OnActorActivatedRef(ObjectReference akActionRef)
 	Float version = 1.02
-	Bool outpostOnly = true
+	Bool outpostOnly = false
 
 	; Since scripts will bake into our saves, we will do version updating to disable old scripts and only run our new ones
 	If version <= 1.02
