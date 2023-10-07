@@ -1,6 +1,6 @@
 
 ; --- About ---
-; This script will add all ship components to all known ship technicians to speed up your ship building!
+; This script will automatically unlock locked containers, doors and terminals!
 ; --- Author ---
 ; PoPoWanObi
 ; --- Notes ---
