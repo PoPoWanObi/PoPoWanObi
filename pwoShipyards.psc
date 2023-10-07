@@ -16,33 +16,76 @@ EndEvent
 
 Function GetVersion() global
 	; A quick global function that can be used to determine the version
-	String version = "1.01"
+	String version = "1.02"
 	Debug.Messagebox("ESSA Version: " + version)
 EndFunction
 
 Event OnPlayerLoadGame()
 	Utility.Wait(1.0) ; Introduce a delay so it does not run while loading.
-	String version = "1.01"
+	String version = "1.02"
 	Debug.Notification("ESSA Version " + version + " is currently running.")
 EndEvent
 
 Event OnActorActivatedRef(ObjectReference akActionRef)
-	Float version = 1.01
+	Float version = 1.02
+	Bool outpostOnly = true
 
 	; Since scripts will bake into our saves, we will do version updating to disable old scripts and only run our new ones
-	If version <= 1.01
-		; Basic keyword all shipyard vendors should have
-		Keyword VendorSM_BasicParts_Shinigami_Weapon_Ballistic = Game.GetForm(0x14538F) as Keyword
+	If version <= 1.02
 
-		; Check if the NPC has the specified keyword
-    	If akActionRef.HasKeyword(VendorSM_BasicParts_Shinigami_Weapon_Ballistic)
-        	AddKeywordsToObjRef(akActionRef)
-        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
-    	Else
-        	Debug.Trace("PWO: {ESSA} - NPC does not have the keyword.", 0)
+		; Basic keyword all shipyard vendors should have
+		Keyword VendorSM_Deimos_Docker = Game.GetForm(0x271c0) as Keyword
+		Keyword VendorSM_Hopetech_Docker = Game.GetForm(0x271c1) as Keyword
+		Keyword VendorSM_BasicParts_Dogstar_Shields = Game.GetForm(0x1453b0) as Keyword
+		Keyword VendorSM_BasicParts_Dogstar_Reactor = Game.GetForm(0x1453b1) as Keyword
+		Keyword VendorSM_BasicParts_DeepCore_GravDrive = Game.GetForm(0x14539e) as Keyword
+		Keyword VendorSM_BasicParts_AmunDunn_Engine = Game.GetForm(0x1453b2) as Keyword
+		
+		Keyword VendorSM_Nova_GravDrive = Game.GetForm(0x1453b7) as Keyword
+		Keyword VendorSM_Hopetech_Lander_Common = Game.GetForm(0x1453bc) as Keyword
+		Keyword VendorSM_Taiyo_Lander_Common = Game.GetForm(0x1453bf) as Keyword
+		Keyword VendorSM_Stroud_Habitat_Struct_Common = Game.GetForm(0x1453c3) as Keyword
+		Keyword VendorSM_Deimos_Habitat_Struct_Common = Game.GetForm(0x1453c5) as Keyword
+
+		; Get the ActorTypeHuman keyword to determine if the reference is a actor
+		Keyword isHuman = Game.GetForm(0x0025E194) as Keyword
+
+		If outpostOnly == false
+
+			; Check if the NPC has the specified keyword
+	    	If akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Deimos_Docker) || akActionRef.HasKeyword(VendorSM_Hopetech_Docker) || akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Shields))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
+	    	ElseIf akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Reactor) || akActionRef.HasKeyword(VendorSM_BasicParts_DeepCore_GravDrive) || akActionRef.HasKeyword(VendorSM_BasicParts_AmunDunn_Engine))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
+	    	ElseIf akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Nova_GravDrive) || akActionRef.HasKeyword(VendorSM_Hopetech_Lander_Common) || akActionRef.HasKeyword(VendorSM_Taiyo_Lander_Common))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
+	    	ElseIf akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Stroud_Habitat_Struct_Common) || akActionRef.HasKeyword(VendorSM_Deimos_Habitat_Struct_Common))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a technician.", 0)
+	    	Else
+	        	Debug.Trace("PWO: {ESSA} - NPC does not have the requested keywords.", 0)
+	    	EndIf
+	    EndIf
+	    ; Outposts check
+	    	If !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Deimos_Docker) || akActionRef.HasKeyword(VendorSM_Hopetech_Docker) || akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Shields))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+	    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_BasicParts_Dogstar_Reactor) || akActionRef.HasKeyword(VendorSM_BasicParts_DeepCore_GravDrive) || akActionRef.HasKeyword(VendorSM_BasicParts_AmunDunn_Engine))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+	    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Nova_GravDrive) || akActionRef.HasKeyword(VendorSM_Hopetech_Lander_Common) || akActionRef.HasKeyword(VendorSM_Taiyo_Lander_Common))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+	    	ElseIf !akActionRef.hasKeyword(isHuman) && (akActionRef.HasKeyword(VendorSM_Stroud_Habitat_Struct_Common) || akActionRef.HasKeyword(VendorSM_Deimos_Habitat_Struct_Common))
+	    		AddKeywordsToObjRef(akActionRef)
+	        	Debug.Trace("PWO: {ESSA} - Successfully added keywords to a outpost.", 0)
+	    	ElseIf !akActionRef.hasKeyword(isHuman)
+	        	Debug.Trace("PWO: {ESSA} - Target does not have the requested keywords.", 0)
+    		EndIf
     	EndIf
-    EndIf
-	
 EndEvent
 
 ; Function to add keywords to an object reference
@@ -134,8 +177,8 @@ Function AddKeywordsToObjRef(ObjectReference actor)
 	Keyword VendorSM_ShieldedCargo = Game.GetForm(0x143CA0) as Keyword
 
 	; DEBUG KEYWORDS
-	;Keyword VendorSM_Starstation = Game.GetForm(0x1d2072) as Keyword ; Starstation parts
-	;Keyword VendorSM_Hopetech_Cargo_DELETEME = Game.GetForm(0x1453bb) as Keyword ; Hopetech Cargo
+	;Keyword VendorSM_Starstation = Game.GetForm(0x1d2072) as Keyword
+	;Keyword VendorSM_Hopetech_Cargo_DELETEME = Game.GetForm(0x1453bb) as Keyword
 	;Keyword VendorSM_BasicParts_Shinigami_Weapon_Special_DELETEME = Game.GetForm(0x14538e) as Keyword
 	;Keyword VendorSM_BasicParts_Nautilus_Cargo_DELETEME = Game.GetForm(0x1453ac) as Keyword
 	;Keyword VendorSM_BasicParts_LightScythe_Weapon_Special_DELETEME = Game.GetForm(0x145392) as Keyword
